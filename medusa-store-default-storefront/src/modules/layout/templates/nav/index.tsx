@@ -6,6 +6,12 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
 
+const MenuItems = {
+  Consignação: "/store",
+  Compra: "/store",
+  Aluguel: "/store",
+}
+
 export default async function Nav() {
   const regions = await listRegions().then((regions: StoreRegion[]) => regions)
 
@@ -15,7 +21,22 @@ export default async function Nav() {
         <nav className="content-container txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
           <div className="flex-1 basis-0 h-full flex items-center">
             <div className="h-full">
-              <SideMenu regions={regions} />
+              {/* <SideMenu regions={regions} /> */}
+              <ul className="flex gap-6 items-center justify-center h-full">
+                {Object.entries(MenuItems).map(([name, href]) => {
+                  return (
+                    <li key={name}>
+                      <LocalizedClientLink
+                        href={href}
+                        className="text-md leading-10 hover:text-ui-fg-disabled"
+                        data-testid={`${name.toLowerCase()}-link`}
+                      >
+                        {name}
+                      </LocalizedClientLink>
+                    </li>
+                  )
+                })}
+              </ul>
             </div>
           </div>
 
@@ -25,7 +46,7 @@ export default async function Nav() {
               className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
               data-testid="nav-store-link"
             >
-              Medusa Store
+              VICA
             </LocalizedClientLink>
           </div>
 
@@ -36,7 +57,7 @@ export default async function Nav() {
                 href="/account"
                 data-testid="nav-account-link"
               >
-                Account
+                Login
               </LocalizedClientLink>
             </div>
             <Suspense
@@ -46,7 +67,7 @@ export default async function Nav() {
                   href="/cart"
                   data-testid="nav-cart-link"
                 >
-                  Cart (0)
+                  Carrinho (0)
                 </LocalizedClientLink>
               }
             >
