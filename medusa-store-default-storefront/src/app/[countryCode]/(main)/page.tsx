@@ -8,6 +8,7 @@ import { CardCategories } from "@modules/home/components/card-categories"
 import { CardBrands } from "@modules/home/components/card-brands"
 import { Carousel } from "@modules/home/components/carousel"
 import { CardNews } from "@modules/home/components/card-news"
+import { CardProduct } from "@modules/home/components/card-product"
 
 
 export const metadata: Metadata = {
@@ -256,6 +257,44 @@ const homeCardBlogProprieties = [
   },
 ]
 
+const homeHighlightsProductsProprieties = [
+  {
+    title: "Bolsa Gucci MK",
+    description: "A bolsa gucci GG Marmont é uma releitura do clássico logo da grife italiana, o duplo GG",
+    price: "R$ 1.000,00",
+    imageUrl: "https://data.pozzilei.it/images/galleries/26822/06032024_002.png",
+    url: "/calcados",
+  },
+  {
+    title: "Bolsa Gucci MK",
+    description: "A bolsa gucci GG Marmont é uma releitura do clássico logo da grife italiana, o duplo GG",
+    price: "R$ 1.000,00",
+    imageUrl: "https://data.pozzilei.it/images/galleries/26822/06032024_002.png",
+    url: "/calcados",
+  },
+  {
+    title: "Bolsa Gucci MK",
+    description: "A bolsa gucci GG Marmont é uma releitura do clássico logo da grife italiana, o duplo GG",
+    price: "R$ 1.000,00",
+    imageUrl: "https://data.pozzilei.it/images/galleries/26822/06032024_002.png",
+    url: "/calcados",
+  },
+  {
+    title: "Bolsa Gucci MK",
+    description: "A bolsa gucci GG Marmont é uma releitura do clássico logo da grife italiana, o duplo GG",
+    price: "R$ 1.000,00",
+    imageUrl: "https://data.pozzilei.it/images/galleries/26822/06032024_002.png",
+    url: "/calcados",
+  },
+  {
+    title: "Bolsa Gucci MK",
+    description: "A bolsa gucci GG Marmont é uma releitura do clássico logo da grife italiana, o duplo GG",
+    price: "R$ 1.000,00",
+    imageUrl: "https://data.pozzilei.it/images/galleries/26822/06032024_002.png",
+    url: "/calcados",
+  },
+]
+
 export default async function Home(props: {
   params: Promise<{ countryCode: string }>
 }) {
@@ -289,27 +328,41 @@ export default async function Home(props: {
       <section className="flex w-full justify-center items-center my-[10vh]">
         <div className="flex w-full max-w-[1400px] gap-6">
           {homeCardCategoriesProprieties.map((values, index) => (
-            <CardCategories key={index} {...values}/>
+            <CardCategories key={index} {...values} />
           ))}
         </div>
       </section>
       <Banner containerStyles="bg-[center_60%]" {...homeBannersProprieties[1]} />
+      <section className="flex w-full justify-center items-center my-[10vh]">
+        <div className="grid w-full max-w-[1400px] gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          {homeHighlightsProductsProprieties.map((values, index) => (
+            <CardProduct key={index} {...values} />
+          ))}
+        </div>
+      </section>
       <Banner {...homeBannersProprieties[2]} />
+      <section className="flex w-full justify-center items-center my-[10vh]">
+        <div className="grid w-full max-w-[1400px] gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          {homeHighlightsProductsProprieties.map((values, index) => (
+            <CardProduct key={index} {...values} />
+          ))}
+        </div>
+      </section>
       <section className="flex flex-col w-full justify-center items-center my-[10vh]">
         <div className="flex flex-col w-full text-lg gap-y-4 max-w-[1400px]">
           <h1 className="w-full text-lg md:text-xl font-semi-bold leading-tigh ">Acesse também</h1>
           <div className="flex w-full gap-6">
             {homeCardBlogProprieties.map((values, index) => (
-              <CardNews key={index} {...values}/>
+              <CardNews key={index} {...values} />
             ))}
           </div>
         </div>
       </section>
-      <section className="py-12">
+      {/* <section className="my-[10vh]">
         <ul className="flex flex-col gap-x-6">
           <FeaturedProducts collections={collections} region={region} />
         </ul>
-      </section>
+      </section> */}
     </>
   )
 }
