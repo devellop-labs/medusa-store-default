@@ -276,7 +276,7 @@ export default async function Home(props: {
   return (
     <>
       <Banner {...homeBannersProprieties[0]} />
-      <div className="items-center my-[15vh]">
+      <section className="items-center my-[10vh]">
         <Carousel
           isDisabledButtons
           autoplay
@@ -285,17 +285,17 @@ export default async function Home(props: {
             <CardBrands key={index} {...values} />
           ))}
         </Carousel>
-      </div>
-      <div className="flex w-full justify-center items-center my-[15vh]">
+      </section>
+      <section className="flex w-full justify-center items-center my-[10vh]">
         <div className="flex w-full max-w-[1400px] gap-6">
           {homeCardCategoriesProprieties.map((values, index) => (
             <CardCategories key={index} {...values}/>
           ))}
         </div>
-      </div>
+      </section>
       <Banner containerStyles="bg-[center_60%]" {...homeBannersProprieties[1]} />
       <Banner {...homeBannersProprieties[2]} />
-      <div className="flex flex-col w-full justify-center items-center my-[15vh]">
+      <section className="flex flex-col w-full justify-center items-center my-[10vh]">
         <div className="flex flex-col w-full text-lg gap-y-4 max-w-[1400px]">
           <h1 className="w-full text-lg md:text-xl font-semi-bold leading-tigh ">Acesse também</h1>
           <div className="flex w-full gap-6">
@@ -304,12 +304,12 @@ export default async function Home(props: {
             ))}
           </div>
         </div>
-      </div>
-      <div className="py-12">
+      </section>
+      <section className="py-12">
         <ul className="flex flex-col gap-x-6">
           <FeaturedProducts collections={collections} region={region} />
         </ul>
-      </div>
+      </section>
     </>
   )
 }
