@@ -293,7 +293,7 @@ export default async function Home(props: {
           ))}
         </div>
       </div>
-      <Banner {...homeBannersProprieties[1]} />
+      <Banner containerStyles="bg-[center_60%]" {...homeBannersProprieties[1]} />
       <Banner {...homeBannersProprieties[2]} />
       <div className="flex flex-col w-full justify-center items-center my-[15vh]">
         <div className="flex flex-col w-full text-lg gap-y-4 max-w-[1400px]">
