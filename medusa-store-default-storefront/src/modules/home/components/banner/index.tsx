@@ -1,6 +1,6 @@
 import React from "react";
 
-interface BannerProps {
+interface IBannerProps {
   imageUrl: string
   title: string
   subtitle: string
@@ -10,7 +10,7 @@ interface BannerProps {
   textStyles?: string
 }
 
-const Banner: React.FC<BannerProps> = ({
+const Banner: React.FC<IBannerProps> = ({
   imageUrl,
   title,
   subtitle,
