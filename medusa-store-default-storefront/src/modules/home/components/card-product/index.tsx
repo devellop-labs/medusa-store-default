@@ -20,12 +20,12 @@ export const CardProduct: React.FC<ICardProduct> = ({ url, imageUrl, title, desc
                     className="w-full h-full object-cover rounded-lg"
                 />
             </a>
-            <div className="flex flex-col w-full text-lg overflow-hidden gap-y-2">
-                <h1 className="text-start text-lg md:text-xl font-semibold leading-tight">
+            <div className="flex flex-col w-full overflow-hidden gap-y-2">
+                <h1 className="text-start text-lg text-bold md:text-xl leading-tight">
                     {title}
                 </h1>
-                <p className="text-black/50 text-sm truncate">{description}</p>
-                <p className="text-black/70 text-md font-medium truncate">{price}</p>
+                <p className="text-base-regular truncate">{description}</p>
+                <p className="text-md text-bold md:text-lg truncate">{price}</p>
             </div>
         </div>
     )

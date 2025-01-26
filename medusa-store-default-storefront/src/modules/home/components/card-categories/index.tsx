@@ -16,7 +16,7 @@ export const CardCategories: React.FC<ICardCategories> = ({ imageUrl, url, title
             </a>
             <div className="flex flex-col items-center w-full text-lg">
                 <h1 className="w-full text-center text-lg md:text-xl font-semi-bold leading-tigh ">{title}</h1>
-                <p className="text-black/50">{subtitle}</p>
+                <p className="text-base-regular">{subtitle}</p>
             </div>
         </div>
     )

@@ -89,7 +89,7 @@ const CartDropdown = ({
             data-testid="nav-cart-link"
           >
             <div>
-              <TiShoppingCart size={24} />
+              <TiShoppingCart size={24} className="text-ui-text-contrast"/>
               {totalItems > 0 && (
                 <div className="absolute top-[8px] -right-1 bg-[#c7c7c7] text-dark text-xs font-semibold w-4 h-4 flex items-center justify-center rounded-full">
                   {totalItems}
