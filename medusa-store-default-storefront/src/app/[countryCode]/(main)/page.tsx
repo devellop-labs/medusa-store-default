@@ -315,7 +315,7 @@ export default async function Home(props: {
   return (
     <>
       <Banner {...homeBannersProprieties[0]} />
-      <section className="items-center my-[10vh]">
+      <section className="items-center my-[15vh]">
         <Carousel
           isDisabledButtons
           autoplay
@@ -325,7 +325,7 @@ export default async function Home(props: {
           ))}
         </Carousel>
       </section>
-      <section className="flex w-full justify-center items-center my-[10vh]">
+      <section className="flex w-full justify-center items-center my-[15vh]">
         <div className="flex w-full max-w-[1400px] gap-6">
           {homeCardCategoriesProprieties.map((values, index) => (
             <CardCategories key={index} {...values} />
@@ -333,22 +333,28 @@ export default async function Home(props: {
         </div>
       </section>
       <Banner containerStyles="bg-[center_60%]" {...homeBannersProprieties[1]} />
-      <section className="flex w-full justify-center items-center my-[10vh]">
-        <div className="grid w-full max-w-[1400px] gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {homeHighlightsProductsProprieties.map((values, index) => (
-            <CardProduct key={index} {...values} />
-          ))}
+      <section className="flex w-full justify-center items-center my-[15vh]">
+        <div className="flex flex-col w-full text-lg gap-y-4 max-w-[1400px]">
+          <h1 className="w-full text-lg md:text-xl font-semi-bold leading-tigh ">Nova coleção</h1>
+          <div className="grid w-full max-w-[1400px] gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+            {homeHighlightsProductsProprieties.map((values, index) => (
+              <CardProduct key={index} {...values} />
+            ))}
+          </div>
         </div>
       </section>
       <Banner {...homeBannersProprieties[2]} />
-      <section className="flex w-full justify-center items-center my-[10vh]">
-        <div className="grid w-full max-w-[1400px] gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-          {homeHighlightsProductsProprieties.map((values, index) => (
-            <CardProduct key={index} {...values} />
-          ))}
+      <section className="flex w-full justify-center items-center my-[15vh]">
+        <div className="flex flex-col w-full text-lg gap-y-4 max-w-[1400px]">
+          <h1 className="w-full text-lg md:text-xl font-semi-bold leading-tigh ">Destaques do mês</h1>
+          <div className="grid w-full max-w-[1400px] gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+            {homeHighlightsProductsProprieties.map((values, index) => (
+              <CardProduct key={index} {...values} />
+            ))}
+          </div>
         </div>
       </section>
-      <section className="flex flex-col w-full justify-center items-center my-[10vh]">
+      <section className="flex flex-col w-full justify-center items-center my-[15vh]">
         <div className="flex flex-col w-full text-lg gap-y-4 max-w-[1400px]">
           <h1 className="w-full text-lg md:text-xl font-semi-bold leading-tigh ">Acesse também</h1>
           <div className="flex w-full gap-6">
