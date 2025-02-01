@@ -16,6 +16,8 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import Thumbnail from "@modules/products/components/thumbnail"
 import { usePathname } from "next/navigation"
 import { Fragment, useEffect, useRef, useState } from "react"
+import { TiShoppingCart } from "react-icons/ti";
+
 
 const CartDropdown = ({
   cart: cartState,
@@ -85,7 +87,16 @@ const CartDropdown = ({
             className="hover:text-ui-fg-base"
             href="/cart"
             data-testid="nav-cart-link"
-          >{`Cart (${totalItems})`}</LocalizedClientLink>
+          >
+            <div>
+              <TiShoppingCart size={24} className="text-ui-text-contrast"/>
+              {totalItems > 0 && (
+                <div className="absolute top-[8px] -right-1 bg-[#c7c7c7] text-dark text-xs font-semibold w-4 h-4 flex items-center justify-center rounded-full">
+                  {totalItems}
+                </div>
+              )}
+            </div>
+          </LocalizedClientLink>
         </PopoverButton>
         <Transition
           show={cartDropdownOpen}
@@ -103,7 +114,7 @@ const CartDropdown = ({
             data-testid="nav-cart-dropdown"
           >
             <div className="p-4 flex items-center justify-center">
-              <h3 className="text-large-semi">Cart</h3>
+              <h3 className="text-large-semi">Carrinho</h3>
             </div>
             {cartState && cartState.items?.length ? (
               <>
@@ -151,7 +162,7 @@ const CartDropdown = ({
                                   data-testid="cart-item-quantity"
                                   data-value={item.quantity}
                                 >
-                                  Quantity: {item.quantity}
+                                  Quantidade: {item.quantity}
                                 </span>
                               </div>
                               <div className="flex justify-end">
@@ -168,7 +179,7 @@ const CartDropdown = ({
                             className="mt-1"
                             data-testid="cart-item-remove-button"
                           >
-                            Remove
+                            Remover
                           </DeleteButton>
                         </div>
                       </div>
@@ -197,7 +208,7 @@ const CartDropdown = ({
                       size="large"
                       data-testid="go-to-cart-button"
                     >
-                      Go to cart
+                      Ir para o carrinho
                     </Button>
                   </LocalizedClientLink>
                 </div>
@@ -208,12 +219,12 @@ const CartDropdown = ({
                   <div className="bg-gray-900 text-small-regular flex items-center justify-center w-6 h-6 rounded-full text-white">
                     <span>0</span>
                   </div>
-                  <span>Your shopping bag is empty.</span>
+                  <span>Seu carrinho está vazio.</span>
                   <div>
                     <LocalizedClientLink href="/store">
                       <>
-                        <span className="sr-only">Go to all products page</span>
-                        <Button onClick={close}>Explore products</Button>
+                        <span className="sr-only">Vá para página de produtos</span>
+                        <Button onClick={close}>Explorar produtos</Button>
                       </>
                     </LocalizedClientLink>
                   </div>
